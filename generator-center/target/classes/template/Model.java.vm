@@ -1,0 +1,66 @@
+package ${package}.${moduleName}.entity;
+import cn.afterturn.easypoi.excel.annotation.Excel;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import org.hibernate.validator.constraints.Length;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+
+import java.io.Serializable;
+
+
+/**
+ * ${comments}
+ * 接收传参的实体类
+ *（实际开发中配合移动端接口开发手动去掉些没用的字段， 后端一般用entity就够用了）
+ * 取自ModelAndView 的model名称
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@TableName("${tableName}")
+@ApiModel(value = "${className}")
+@Data
+public class ${className}Model implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    #foreach ($column in $columns)
+    /**
+     * $column.comments
+     */
+    #if($column.columnName == $pk.columnName)
+    @TableId #end
+
+    #if($column.isNullable == 'NO' && $column.columnName != $pk.columnName  && $column.attrType != 'String')
+    @NotNull(message = "${column.comments}不能为空") #end
+
+    #if($column.isNullable == 'NO' && $column.columnName != $pk.columnName  && $column.attrType == 'String')
+    @NotBlank(message = "${column.comments}不能为空") #end
+
+    #if($column.attrType == 'Date')
+    @JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat #end
+
+    #if($column.attrname == 'updateBy' || $column.attrname == 'updateTime')
+    @TableField(fill = FieldFill.UPDATE) #end
+
+    #if($column.attrname == 'createBy' || $column.attrname == 'createTime')
+    @TableField(fill = FieldFill.INSERT) #end
+
+    #if(${column.dataLength} != '')
+        #if($column.columnName != $pk.columnName && (
+                    $column.attrname != 'updateBy' || $column.attrname != 'createBy'
+                    || $column.attrname != 'updateTime' || $column.attrname != 'createTime'
+                    || $column.attrname != 'isDelete'))
+    @Excel(name = "$column.attrname")
+    @Length(max=${column.dataLength}, message="${column.comments}")#end
+    #end
+
+    @ApiModelProperty(value = "${column.comments}"#if($column.columnName == $pk.columnName
+            || $column.attrname == 'updateBy' || $column.attrname == 'createBy'
+            || $column.attrname == 'updateTime' || $column.attrname == 'createTime'), hidden = true#end)
+    private $column.attrType $column.attrname;
+    #end
+
+}
