@@ -11,3 +11,5 @@
 *.iml
 out
 gen
+/文档
+/logs
