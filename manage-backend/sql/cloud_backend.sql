@@ -133,11 +133,4 @@ CREATE TABLE `t_mail`  (
 -- ----------------------------
 -- Records of t_mail
 -- ----------------------------
-INSERT INTO `t_mail` VALUES (9, 2, 'superadmin', '630603232@qq.com', '1', '1  \n					', 1, '2018-12-22 18:16:38', '2018-12-22 18:16:18', '2018-12-22 18:16:18');
-INSERT INTO `t_mail` VALUES (10, 2, 'superadmin', 'liys225@163.com', '1', '1  \n					', 1, '2018-12-22 18:17:55', '2018-12-22 18:17:36', '2018-12-22 18:17:36');
-INSERT INTO `t_mail` VALUES (11, 2, 'superadmin', 'liujunguo2012@126.com', '1', '1  \n					', 1, '2018-12-22 18:18:50', '2018-12-22 18:18:31', '2018-12-22 18:18:31');
-INSERT INTO `t_mail` VALUES (12, 2, 'superadmin', 'liys225@163.com', 'RG', '测试', 1, '2018-12-22 18:20:09', '2018-12-22 18:19:50', '2018-12-22 18:19:50');
-INSERT INTO `t_mail` VALUES (13, 2, 'superadmin', 'liujunguo2012@126.com', 'RG', '狗', 1, '2018-12-22 18:22:35', '2018-12-22 18:22:17', '2018-12-22 18:22:17');
-INSERT INTO `t_mail` VALUES (14, 2, 'superadmin', 'liujunguo2012@126.com', 'SB', '傻逼', 1, '2018-12-22 18:36:08', '2018-12-22 18:35:49', '2018-12-22 18:35:49');
-
 SET FOREIGN_KEY_CHECKS = 1;

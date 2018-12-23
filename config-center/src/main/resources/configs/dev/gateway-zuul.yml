@@ -57,5 +57,6 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 60000
+
 cron:
-  black-ip: 0 0/5 * * * ?
+  black-ip: 0 0/1 * * * ?

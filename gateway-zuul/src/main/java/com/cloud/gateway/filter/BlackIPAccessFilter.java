@@ -72,6 +72,7 @@ public class BlackIPAccessFilter extends ZuulFilter {
      * 定时同步黑名单IP
      */
     @Scheduled(cron = "${cron.black-ip}")
+//    @Scheduled(cron = "0/5 * * * * ?")
     public void syncBlackIPList() {
         try {
             Set<String> list = backendClient.findAllBlackIPs(Collections.emptyMap());
