@@ -20,10 +20,10 @@
         <module>log-starter</module>
         <module>file-center</module>
         <module>notification-center</module>
-        <module>generator-center</module>
         <module>tx-manager</module>
+<!--        <module>generator-center</module>
         <module>tx-transaction</module>
-        <module>tx-transaction02</module>
+        <module>tx-transaction02</module>-->
     </modules>
 
     <parent>
