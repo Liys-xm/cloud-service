@@ -14,7 +14,6 @@
     <artifactId>generator-center</artifactId>
     <packaging>jar</packaging>
     <name>generator</name>
-    <description>代码生成工具</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -135,7 +134,8 @@
             <id>public</id>
             <name>aliyun nexus</name>
             <url>http://maven.aliyun.com
-                。。/nexus/content/groups/public/</url>
+                。。/nexus/content/groups/public/
+            </url>
             <releases>
                 <enabled>true</enabled>
             </releases>
