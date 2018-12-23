@@ -11,6 +11,6 @@
 *.iml
 out
 gen
-/文档
-/logs
-/README.md
+文档
+logs
+README.md
