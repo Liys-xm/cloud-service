@@ -16,7 +16,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Page<T> implements Serializable {
-
     private static final long serialVersionUID = -275582248840137389L;
     private int total;
     private List<T> data;
