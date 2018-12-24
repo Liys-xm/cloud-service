@@ -12,7 +12,7 @@ function initMenu(){
 	    	 var menu = $("#menu");
 	    	 $.each(data, function(i,item){
 	             var a = $("<a href='javascript:;'></a>");
-	             
+
 	             var css = item.css;
 	             if(css!=null && css!=""){
 	            	 a.append("<i aria-hidden='true' class='fa " + css +"'></i>");
@@ -24,6 +24,7 @@ function initMenu(){
 	             if(url != null && url != ''){
 	            	 a.attr("data-url", url);
 	             }
+
 	             
 	             var li = $("<li class='layui-nav-item'></li>");
 	             if (i == 0) {
